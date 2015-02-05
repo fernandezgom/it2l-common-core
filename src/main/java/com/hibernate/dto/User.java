@@ -1,6 +1,6 @@
 package com.hibernate.dto;
 
-// Generated 02-Feb-2015 16:55:20 by Hibernate Tools 3.4.0.CR1
+// Generated 05-Feb-2015 15:58:13 by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,7 @@ public class User implements java.io.Serializable {
 	private String user;
 	private Integer idView;
 	private String sequencer;
-	private int condition;
+	private Integer cond;
 	private String idSequencerView;
 	private Integer lastScore;
 	private Set<Sequence> sequences = new HashSet<Sequence>(0);
@@ -34,13 +34,12 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
-	public User(int idUser, int condition) {
+	public User(int idUser) {
 		this.idUser = idUser;
-		this.condition = condition;
 	}
 
 	public User(int idUser, String user, Integer idView, String sequencer,
-			int condition, String idSequencerView, Integer lastScore,
+			Integer cond, String idSequencerView, Integer lastScore,
 			Set<Sequence> sequences, Set<Flexercise> flexercises,
 			Set<Whizzexercise> whizzexercises, Set<Ctatexercise> ctatexercises,
 			Set<Audiostream> audiostreams) {
@@ -48,7 +47,7 @@ public class User implements java.io.Serializable {
 		this.user = user;
 		this.idView = idView;
 		this.sequencer = sequencer;
-		this.condition = condition;
+		this.cond = cond;
 		this.idSequencerView = idSequencerView;
 		this.lastScore = lastScore;
 		this.sequences = sequences;
@@ -95,13 +94,13 @@ public class User implements java.io.Serializable {
 		this.sequencer = sequencer;
 	}
 
-	@Column(name = "condition", nullable = false)
-	public int getCondition() {
-		return this.condition;
+	@Column(name = "cond")
+	public Integer getCond() {
+		return this.cond;
 	}
 
-	public void setCondition(int condition) {
-		this.condition = condition;
+	public void setCond(Integer cond) {
+		this.cond = cond;
 	}
 
 	@Column(name = "idSequencerView", length = 30)
