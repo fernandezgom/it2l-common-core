@@ -10,7 +10,10 @@ public class HeaderVO extends BaseVO {
 	public HeaderVO() {
 		super();
 	}
-
+	
+	public static final String ENGLISH="en";
+	public static final String GERMAN="de";
+	public static final String SPANISH="es";
 	/**
 	 * 
 	 */
