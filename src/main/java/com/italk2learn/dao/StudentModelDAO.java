@@ -24,7 +24,7 @@ public class StudentModelDAO extends HibernateDaoSupport implements IStudentMode
 		return this.getSessionFactory().getCurrentSession();
 	}
 	
-	public boolean insertCurrentStudentModelByUser(int idUser, boolean isExploratoryExercise, int studentChallenge, String currentExercise, int unstructuredCounter, int structuredCounter) throws ITalk2LearnException {
+	public boolean insertCurrentStudentModelByUser(int idUser, boolean isExploratoryExercise, int studentChallenge, String currentExercise, int unstructuredCounter, int structuredCounter, String lastExploratoryExercise) throws ITalk2LearnException {
 		final Session session = this.getITalk2LearnSession();
 		byte b;
 		try {
@@ -43,6 +43,7 @@ public class StudentModelDAO extends HibernateDaoSupport implements IStudentMode
 				stc.setCurrentExercise(currentExercise);
 				stc.setUnstructuredCounter(unstructuredCounter);
 				stc.setStructuredCounter(structuredCounter);
+				stc.setLastExploratoryExercise(lastExploratoryExercise);
 				session.saveOrUpdate(stc);
 				return true;
 			} else {
@@ -54,6 +55,7 @@ public class StudentModelDAO extends HibernateDaoSupport implements IStudentMode
 				st.setCurrentExercise(currentExercise);
 				st.setUnstructuredCounter(unstructuredCounter);
 				st.setStructuredCounter(structuredCounter);
+				st.setLastExploratoryExercise(lastExploratoryExercise);
 				session.saveOrUpdate(st);
 				return true;
 			}

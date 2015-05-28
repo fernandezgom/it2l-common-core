@@ -28,8 +28,8 @@ public class TISLogDAO extends HibernateDaoSupport implements ITISLogDAO{
 			Tislog tis=new Tislog();
 			User us= (User) session.load(User.class, idUser);
 			tis.setUser(us);
-			tis.setKey(key);
-			tis.setValue(value);
+			tis.setTiskey(key);
+			tis.setTisvalue(value);
 			session.saveOrUpdate(tis);
 			return true;
 		} catch (Exception e){

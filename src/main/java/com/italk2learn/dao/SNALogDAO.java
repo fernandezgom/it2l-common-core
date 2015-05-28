@@ -1,15 +1,12 @@
 package com.italk2learn.dao;
 
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.hibernate.dto.Snalog;
-import com.hibernate.dto.Studentmodel;
 import com.hibernate.dto.User;
 import com.italk2learn.dao.inter.ISNALogDAO;
 import com.italk2learn.exception.ITalk2LearnException;
@@ -31,8 +28,8 @@ public class SNALogDAO extends HibernateDaoSupport implements ISNALogDAO{
 			Snalog sna=new Snalog();
 			User us= (User) session.load(User.class, idUser);
 			sna.setUser(us);
-			sna.setKey(key);
-			sna.setValue(value);
+			sna.setSnakey(key);
+			sna.setSnavalue(value);
 			session.saveOrUpdate(sna);
 			return true;
 		} catch (Exception e){

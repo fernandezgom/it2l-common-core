@@ -1,6 +1,6 @@
 package com.hibernate.dto;
 
-// Generated 14-May-2015 21:03:33 by Hibernate Tools 3.4.0.CR1
+// Generated 15-May-2015 13:12:29 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -24,8 +24,8 @@ public class Tislog implements java.io.Serializable {
 
 	private Integer idTislog;
 	private User user;
-	private String key;
-	private String value;
+	private String tiskey;
+	private String tisvalue;
 	private Date date;
 
 	public Tislog() {
@@ -36,10 +36,10 @@ public class Tislog implements java.io.Serializable {
 		this.date = date;
 	}
 
-	public Tislog(User user, String key, String value, Date date) {
+	public Tislog(User user, String tiskey, String tisvalue, Date date) {
 		this.user = user;
-		this.key = key;
-		this.value = value;
+		this.tiskey = tiskey;
+		this.tisvalue = tisvalue;
 		this.date = date;
 	}
 
@@ -64,22 +64,22 @@ public class Tislog implements java.io.Serializable {
 		this.user = user;
 	}
 
-	@Column(name = "key", length = 50)
-	public String getKey() {
-		return this.key;
+	@Column(name = "tiskey", length = 50)
+	public String getTiskey() {
+		return this.tiskey;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setTiskey(String tiskey) {
+		this.tiskey = tiskey;
 	}
 
-	@Column(name = "value", length = 1000)
-	public String getValue() {
-		return this.value;
+	@Column(name = "tisvalue", length = 1000)
+	public String getTisvalue() {
+		return this.tisvalue;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setTisvalue(String tisvalue) {
+		this.tisvalue = tisvalue;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)

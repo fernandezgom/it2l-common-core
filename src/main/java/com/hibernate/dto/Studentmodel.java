@@ -1,6 +1,6 @@
 package com.hibernate.dto;
 
-// Generated 14-May-2015 17:48:38 by Hibernate Tools 3.4.0.CR1
+// Generated 26-May-2015 15:34:26 by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +26,7 @@ public class Studentmodel implements java.io.Serializable {
 	private String currentExercise;
 	private int unstructuredCounter;
 	private int structuredCounter;
+	private String lastExploratoryExercise;
 
 	public Studentmodel() {
 	}
@@ -39,6 +40,19 @@ public class Studentmodel implements java.io.Serializable {
 		this.currentExercise = currentExercise;
 		this.unstructuredCounter = unstructuredCounter;
 		this.structuredCounter = structuredCounter;
+	}
+
+	public Studentmodel(User user, byte isExploratoryExercise,
+			int studentChallenge, String currentExercise,
+			int unstructuredCounter, int structuredCounter,
+			String lastExploratoryExercise) {
+		this.user = user;
+		this.isExploratoryExercise = isExploratoryExercise;
+		this.studentChallenge = studentChallenge;
+		this.currentExercise = currentExercise;
+		this.unstructuredCounter = unstructuredCounter;
+		this.structuredCounter = structuredCounter;
+		this.lastExploratoryExercise = lastExploratoryExercise;
 	}
 
 	@Id
@@ -105,6 +119,15 @@ public class Studentmodel implements java.io.Serializable {
 
 	public void setStructuredCounter(int structuredCounter) {
 		this.structuredCounter = structuredCounter;
+	}
+
+	@Column(name = "lastExploratoryExercise", length = 100)
+	public String getLastExploratoryExercise() {
+		return this.lastExploratoryExercise;
+	}
+
+	public void setLastExploratoryExercise(String lastExploratoryExercise) {
+		this.lastExploratoryExercise = lastExploratoryExercise;
 	}
 
 }
