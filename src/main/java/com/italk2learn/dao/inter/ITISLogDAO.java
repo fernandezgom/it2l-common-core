@@ -5,5 +5,7 @@ import com.italk2learn.exception.ITalk2LearnException;
 public interface ITISLogDAO {
 	
 	public boolean storeDataTIS(int idUser, String key, String value) throws ITalk2LearnException;
+	
+	public boolean storeDataTISWithOpenedSession(int idUser, String key, String value) throws ITalk2LearnException;
 
 }

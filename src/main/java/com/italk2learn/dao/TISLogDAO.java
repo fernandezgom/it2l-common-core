@@ -22,8 +22,28 @@ public class TISLogDAO extends HibernateDaoSupport implements ITISLogDAO{
 		return this.getSessionFactory().getCurrentSession();
 	}
 	
+	public final Session getITalk2LearnOpenedSession() {
+		return this.getSessionFactory().openSession();
+	}
+	
 	public boolean storeDataTIS(int idUser, String key, String value) throws ITalk2LearnException {
 		final Session session = this.getITalk2LearnSession();
+		try{
+			Tislog tis=new Tislog();
+			User us= (User) session.load(User.class, idUser);
+			tis.setUser(us);
+			tis.setTiskey(key);
+			tis.setTisvalue(value);
+			session.saveOrUpdate(tis);
+			return true;
+		} catch (Exception e){
+			e.printStackTrace();
+			throw new ITalk2LearnException(e);
+		}
+	}
+	
+	public boolean storeDataTISWithOpenedSession(int idUser, String key, String value) throws ITalk2LearnException {
+		final Session session = this.getITalk2LearnOpenedSession();
 		try{
 			Tislog tis=new Tislog();
 			User us= (User) session.load(User.class, idUser);
