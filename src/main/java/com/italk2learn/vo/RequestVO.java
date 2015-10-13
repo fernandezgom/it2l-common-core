@@ -18,7 +18,7 @@ public class RequestVO extends BaseVO {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	// private static final Logger LOGGER = Logger.getLogger(RequestVO.class);
+	protected LTIObject ltiVO;
 
 	protected HeaderVO headerVO;
 
@@ -28,5 +28,13 @@ public class RequestVO extends BaseVO {
 
 	public void setHeaderVO(HeaderVO headerVO) {
 		this.headerVO = headerVO;
+	}
+	
+	public LTIObject getLtiVO() {
+		return ltiVO;
+	}
+
+	public void setLtiVO(LTIObject ltiVO) {
+		this.ltiVO = ltiVO;
 	}
 }
